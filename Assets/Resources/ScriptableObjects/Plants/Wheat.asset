@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b297620cc1f00046a5291a94eb25c62, type: 3}
+  m_Name: Wheat
+  m_EditorClassIdentifier: 
+  stageGrowTime: 3
+  plant: 1
+  plantName: "\u041F\u0448\u0435\u043D\u0438\u0446\u0430"
+  stagesSprites:
+  - {fileID: -97596747, guid: 245e292ced8d8e04da6a4a094b0875af, type: 3}
+  - {fileID: 933360480, guid: 245e292ced8d8e04da6a4a094b0875af, type: 3}
+  - {fileID: 415124686, guid: 245e292ced8d8e04da6a4a094b0875af, type: 3}
+  - {fileID: 1868917339, guid: 245e292ced8d8e04da6a4a094b0875af, type: 3}
+  plantIcon: {fileID: -413379105, guid: c7e573f8e72051b40a1c5100bb36d913, type: 3}
+  maxStages: 4

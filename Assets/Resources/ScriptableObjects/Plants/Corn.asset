@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b297620cc1f00046a5291a94eb25c62, type: 3}
+  m_Name: Corn
+  m_EditorClassIdentifier: 
+  stageGrowTime: 5
+  plant: 2
+  plantName: "\u041A\u0443\u043A\u0443\u0440\u0443\u0437\u0430"
+  stagesSprites:
+  - {fileID: -1119312727, guid: 940674ba97ddab444ba4dd194be0ef03, type: 3}
+  - {fileID: 1688713735, guid: 940674ba97ddab444ba4dd194be0ef03, type: 3}
+  - {fileID: -1235858910, guid: 940674ba97ddab444ba4dd194be0ef03, type: 3}
+  - {fileID: 747360164, guid: 940674ba97ddab444ba4dd194be0ef03, type: 3}
+  - {fileID: -2009647190, guid: 940674ba97ddab444ba4dd194be0ef03, type: 3}
+  plantIcon: {fileID: 1129536570, guid: c7e573f8e72051b40a1c5100bb36d913, type: 3}
+  maxStages: 5
