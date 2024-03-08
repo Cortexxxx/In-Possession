@@ -51,14 +51,10 @@ public class PlayerMovement : MonoBehaviour
 	{
 
 	}
-	public void FreezePlayer()
+	public void ToggleMovement()
 	{
-		canMove = false;
+		canMove = !canMove;
 		animator.SetBool("Moving", false);
-	}
-	public void UnfreezePlayer()
-	{
-		canMove = true;
 	}
 
 

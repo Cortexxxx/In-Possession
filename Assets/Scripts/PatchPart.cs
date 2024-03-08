@@ -13,7 +13,6 @@ public class PatchPart : Interactable
         Sunflower
     }
 	[SerializeField] private float timeFromLastStage = 0;
-	[SerializeField] private float wateringTime = 2;
 	[SerializeField] private PlantSO currentPlant;
 	[SerializeField] private int growStage = 0;
 	[SerializeField] private bool isPlantGrown = false;
@@ -43,18 +42,16 @@ public class PatchPart : Interactable
 		Player player = Player.Instance;
 		Animator playerAnimator = player.GetComponent<Animator>();
 		PlayerMovement playerMovement = player.GetComponent<PlayerMovement>();
-		playerMovement.FreezePlayer();
+		playerMovement.ToggleMovement();
 		playerAnimator.SetBool("isWatering", true);
 		playerAnimator.SetTrigger("Water");
 		Watering watering = MainCanvas.instance.watering.GetComponentInChildren<Watering>();
 		watering.parent.SetActive(true);
 		yield return new WaitUntil(() => watering.isWatered);
 		watering.parent.SetActive(false);
-
-
 		playerAnimator.SetBool("isWatering", false);
 		needToBeWatered = false;
-		playerMovement.UnfreezePlayer();
+		playerMovement.ToggleMovement();
 	}
 
 	private void MoveToNextStage()
@@ -98,7 +95,7 @@ public class PatchPart : Interactable
 		} else
 		{
 			MainCanvas.instance.plantChoosingPanel.SetActive(true);
-			Player.Instance.GetComponent<PlayerMovement>().FreezePlayer();
+			Player.Instance.GetComponent<PlayerMovement>().ToggleMovement();
 			MainCanvas.instance.plantChoosingPanel.GetComponent<PlantChoose>().currentPatch = this;
 		}
 	}

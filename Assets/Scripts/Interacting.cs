@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class Interacting : MonoBehaviour
 {
+	[SerializeField] private GameObject interactingPanel;
 	[HideInInspector] public Interactable interactingObject;
-    protected KeyCode interactKey = KeyCode.E;
+    private KeyCode interactKey = KeyCode.E;
     private delegate void InteractDelegate();
-    private GameObject interactSpan;
     private InteractDelegate interactDelegate { get; set; }
     private void SetListener(InteractDelegate interactDelegate)
     {
@@ -33,32 +33,30 @@ public class Interacting : MonoBehaviour
 		foreach (var collider in colliders)
 		{
 			Interactable interactable = collider.GetComponent<Interactable>();
-			if (interactable)
+			if (interactable && interactable.canInteract)
 			{
 				interactables.Add(interactable);
 			}
 		}
-        interactSpan = MainCanvas.instance.interactSpan;
-		if (interactables.Count > 0 && interactables[0].canInteract)
+		if (interactables.Count > 0)
 		{
 			RemoveAllListeners();
 			Interactable closestInteractable = interactables[0];
 			foreach (var interactable in interactables)
 			{
                 if (Vector2.Distance(transform.position, interactable.gameObject.transform.position) < 
-					Vector2.Distance(transform.position, closestInteractable.gameObject.transform.position) && interactable.canInteract) 
-					{
-						closestInteractable = interactable;
-					}
+					Vector2.Distance(transform.position, closestInteractable.gameObject.transform.position) && interactable.canInteract) {
+					closestInteractable = interactable;
+				}
 			}
-            interactSpan.SetActive(true);
+			interactingPanel.SetActive(true);
 			MainCanvas.instance.interactButtonText.GetComponent<TextMeshProUGUI>().text = interactKey.ToString();
             SetListener(closestInteractable.OnInteract);
         }
 		else
 		{
 			RemoveAllListeners();
-            interactSpan.SetActive(false);
+			interactingPanel.SetActive(false);
 		}
 	}
 

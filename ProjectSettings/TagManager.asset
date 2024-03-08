@@ -56,6 +56,9 @@ TagManager:
   - name: Player
     uniqueID: 4189426099
     locked: 0
+  - name: UpperProps
+    uniqueID: 4002314137
+    locked: 0
   - name: UI
     uniqueID: 3819046507
     locked: 0
